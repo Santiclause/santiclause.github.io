@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Fix your broken TBR save code</title>
+        <script type="text/javascript">
+function fixMyCode() {
+    var code = document.getElementById("code").value;
+}
+        </script>
+    </head>
+    <body>
+        <form id="inputs"  action="javajcript:fixMyCode();">
+            <div>
+                <label for="code">Your save code (e.g.: -load ABCDE-FGHJI-KLMNO-PQRST-UVWXY-Z0123-45678-9abcd)</label>
+                <input type="text" id="code" required minlength=53 maxlength=53 size=53>
+            </div>
+            <div>
+                <label for="oldname">Your old battle.net tag (as WC3 saw it) (e.g. Santiclause#130)</label>
+                <input type="text" id="oldname" required>
+            </div>
+            <div>
+                <label for="newname">Your new battle.net tag (as WC3 now sees it, i.e your <i>actual</i> battle.net tag) (e.g. Santiclause#1303)</label>
+                <input type="text" id="newname" required>
+            </div>
+            <input type="submit" value="Fix my code">
+        </form>
+    </body>
+</html>
