@@ -2,8 +2,24 @@
     <head>
         <title>Fix your broken TBR save code</title>
         <script type="text/javascript">
+const lookup = ['9', '8', '7', '6', '5', '4', '3', '2', '1', '0', 'Z', 'Y', 'X', 'W', 'V', 'U', 'T', 'S', 'R', 'Q', 'P', 'O', 'N', 'M', 'L', 'K', 'J', 'I', 'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A', 'z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'];
+function inc(c, n) {
+    return lookup[(lookup.indexOf(c) + n) % 62]
+}
+function modifyAt(str, index, n) {
+    if (index >= str.length) return str;
+    return str.substr(0, index) + inc(str[index], n) + str.substr(index + 1);
+}
 function fixMyCode() {
     var code = document.getElementById("code").value;
+    var old_name = document.getElementById("oldname").value;
+    var new_name = document.getElementById("newname").value;
+    if (!new_name.startsWith(old_name)) {
+        alert("You can't use somebody else's name lmao");
+        return
+    }
+    var length_diff = new_name.length - old_name.length
+    document.getElementById("output").value = modifyAt(modifyAt(code, 41, length_diff), 16, length_diff);
 }
         </script>
     </head>
@@ -23,5 +39,7 @@ function fixMyCode() {
             </div>
             <input type="submit" value="Fix my code">
         </form>
+        <div id="output">
+        </div>
     </body>
 </html>
