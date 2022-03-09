@@ -24,13 +24,20 @@ function fixMyCode() {
         </script>
     </head>
     <body>
+        <div>
+            This tool is for updating pre-1.39 save codes that were saved with old battle.net account names, from before WC3 Reforged was released; it will let you migrate from "Santiclause" to "Santiclause#1303".
+        </div>
+        <div>
+            If you want to update a pre-1.39 code to 1.39+, <i>this is not the tool to use</i>. You need to <a href="https://www.hiveworkshop.com/attachments/theblackroadrpgv1-39a2-w3x.387535/">download v1.39a2</a> (the last
+            version to support pre-1.39 style save codes), load your pre-1.39 code inside that map, then save it to generate a 1.39+ style code.
+        </div>
         <form id="inputs"  action="javascript:fixMyCode();">
             <div>
                 <label for="code">Your save code (e.g.: -load ABCDE-FGHJI-KLMNO-PQRST-UVWXY-Z0123-45678-9abcd)</label>
                 <input type="text" id="code" required minlength=53 maxlength=53 size=53>
             </div>
             <div>
-                <label for="oldname">Your old battle.net tag (as WC3 saw it) (e.g. Santiclause#130)</label>
+                <label for="oldname">Your old battle.net tag (as WC3 saw it) (e.g. Santiclause)</label>
                 <input type="text" id="oldname" required>
             </div>
             <div>
